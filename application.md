@@ -46,6 +46,23 @@
 ### IAM 
 	- Always use "roles", not access keys in our command line 
 	
+### API gateway bonus: SDH Generation 
+	- cognito exchanges your session to temp IAM with limited access 
 	
+### Scaling the Frontend 
+	- Host your website on S3 
+	- cheap 
+	- durability 
+	- front-end data driven 
+### Checkout 
+	- Asynchronous checkout 
+	- SQS: Amazon Simple Queue Service
+	- SNS: Amazon Simple Notification Service (SNS)
+	- SES: Amazon Simple Email Service (SES)
+
+### LF2 
+	- Alexa is online, baby. 
+	
+
 	
 	
