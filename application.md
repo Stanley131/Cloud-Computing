@@ -39,8 +39,12 @@
 	- Front-end documentation, awesome
 	- The most important role the API gateway plays is ensuring reliable processing of every API call.
 	- IAM (identity access management)
+	- Step Functions
+	- build a library as along 
+	- layers: 
 	
-	
+### IAM 
+	- Always use "roles", not access keys in our command line 
 	
 	
 	
