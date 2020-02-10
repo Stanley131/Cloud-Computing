@@ -13,4 +13,5 @@
   - handle uploads 
   - AWS lamda is stored in a container which is a lightway image standalone executable package off a piece of software 
   -  
-  
+### Dummy code 
+  - if (event.httpMethod === 'GET'): 
