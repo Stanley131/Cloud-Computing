@@ -42,5 +42,40 @@
   - 
   - 
   - 
+### ELB set up using Command line tool
+  - elb-create-lb production 
+    -- availability-zones us-east-lb 
+    -- listener "prodctioHTTP, lb-port=80, instance-port=80"
+  - elb-configure-healthcheck production \
+    -- taget "HTTP:80"
+    -- intervval 30 
+    -- timeout 2 
+    -- healthy--threshold 6 
+    -- unhealthy-threshold 2 
+  - elb-register-instances-with-lb production \
+    -- instances i-23223
+  - Note: a good system design should be simple 
+### What is misssing ?  AutoScale
+  - four keys:  
+    - authoscale groups - holds instance  (a container)
+      - a group can have multiple instances 
+    - Launch configurations - that determins which instance is launched 
+    - Alarms - that determines when instance is launched 
+      - Certain resources or conditions to determine this (example CPU utilization <70%)
+      - Clock Watch watches this 
+    - policy: specify that instances will be launched or terminated
+      - When alarms ocur => add or reduce instances (Launch configurations)
+    
+### Policies 
+  - scale up or scale down
+  - evalution pierod: take multiple periods and find average 
   - 
+  
+  
+  
+  
+  
+  
+  
+  
   
