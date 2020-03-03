@@ -25,10 +25,11 @@
     - Ring is priority level 
     - Ring 0: Hypervisor always runs on this level 
     
+### What is live VM miragtion
+  - Live migration refers to the process of moving a running virtual machine or application between different physical machines without disconnecting the client or application. Memory, storage, and network connectivity of the virtual machine are transferred from the original guest machine to the destination.
   
-  
-  
-  
+  - Iterative copy
+    - 
   
   
   
