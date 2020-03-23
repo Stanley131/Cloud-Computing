@@ -34,5 +34,12 @@ data from millions of devices.
 	
 	- Consumer APIs: The following APIs enable consumers to 
 	get data from a stream. 
+2. run with docker: 
+	``sudo docker run -it --network="host" 546150905175.dkr.ecr.us-west-2.amazonaws.com/kinesis-video-producer-sdk-cpp-amazon-linux /bin/bash``
+
+### RSTP 
+1. The Real Time Streaming Protocol is a network control protocol 
+   designed for use in entertainment and communications systems
+   to control streaming media servers.    
 2. 
 
