@@ -1,0 +1,66 @@
+# DevOps 
+1. Docker on AWS 
+  - The painful way: Run and Manage your own Docker "Swarm" on EC2 
+  - ECS Architechture: Container Instance. 
+2. ECS Example (Elatic Container Service)
+  - Enviroment -> Docker-> Docker images -> Containter Registry
+    -> ECS  -> Elastic Load Balancer 
+  - Example: lambda functions run on Dockers 
+3.DevOps 
+  - Devops is a set of practices that automates the processes
+    between software development and IT teams, in order that they 
+    can build,test, and release software faster and more reliably
+        --- Atalassian
+4. Release Processes stages 
+    1. Source:  
+        - check-in source code such as .java files 
+        - peer review new code 
+    2. Build: 
+        - compile code, unit tests, Style checkers, 
+          Create container images and function deployment 
+          packages 
+    3. Test:
+        - Integration tests with other systems, load testing 
+          UI tests, security testing
+    4. Production: 
+        - Deployment to production enviroments, monitor code in
+          production to quickly detect errors. 
+5. CodePipeline AWS 
+  - So Cool 
+  - difference between automation engineer and DevOps 
+  - DevOps: 
+    - automation: build, testing, releasing, deployment...
+    - Cultural changes
+    - architecture, 
+    - security 
+    - communication 
+  - Automation: 
+    - automation deployment processes 
+    - Home automation, 
+    - Desktop automation 
+    - Tickets workflow 
+    - Tickets 
+    - Spam Control 
+  - automations can help to reduce mistakes
+6. Infrastructure as Code 
+  - As your infrastructure gets more complex, the only way to reduce its 
+    complexity is to automate them and build pipelines 
+  - AWS cloudformation 
+    - infrastructure as code 
+    - infrastructure, configuration, and security all encoded 
+      in config files called "templates"
+    - reproducible infratruture safely and reliably 
+    - all organizations use piplelines 
+  - AWS has over 100 services 
+  - Local stack: local stack, local AWS, what the hell is this?
+7. mate them and build pipelines 
+  - cloud-pipepline.yaml
+  - yaml is cleaner and easier than json: different stages 
+  - 
+   
+  
+  
+  
+  
+       
+   
