@@ -5,7 +5,7 @@
     – Kafka Definitive Guide
     – Hadoop: The Definitive Guide – Learning Spark
     - Google File System 
-### 3. Papers 
+### 2. Papers 
 1. Google File System: https://static.googleusercontent.com/media/research.google.com/en//archive/gfs-sosp2003.pdf 
 
 2. Map Reduce: Simplified Data Processing on Large Cluster https://static.googleusercontent.com/media/research.google.com/en//archive/mapreduce-osdi04.pdf
