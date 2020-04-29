@@ -1,93 +1,45 @@
 # Guidelines
-1. The Big Data Problem 
-2. Hardware for Big data 
-3. Distributing for Big Data
-4. Handling Failure and Slow Machines 
-5. Map Reduce and Complex Jobs 
-6. Apache Spark
+1. Hadoop/MapReduce , Spark 
 
-### 1. The Big Data Problem and motivation 
-1. Example: compute a large file score   
-    - copy the data or download the data to the machine 
 
-2. To handle large comptation  
-    -  1GB/hour 
-    - 100GB? 100h?
+## 1. Big Data System Architecture 
+1. Data Processing 
+    - sparking streaming , GraphX, MLBase, BlinkDB, Shark, HIVE, PIG, Spark, HADOOP...
+2. Data Management
+    - Tachyon, HDFS, HBASE 
+3. Resource Management 
+    - Mesos, Yarn
     
-3. Where the rubber meets the road?
-    - Concurrency is difficuly to reason about
-
-4. Big Data Motivation 
-    - Google Processes 20PB a day 
-    - partition work 
-    - Compute by many individual mahchines 
-    - combine result 
-    - As a programmer, we just need to write a program. 
-    - Memory cost is getting cheap.
-5. Hardware got Big Data 
-    - Lots of hard drive, CPU, and a lot of memory 
-### 3.  Distributing for Big Data
-1. RDDs: Resilient Distributed Datasets 
-    - Write programs in terms of operations on distributed datasets 
-    - partitioned colllections of objects spread across a cluster, stored in memory or on disk
-    - RDDs built and manipulated through a diverse set of parallel transformations 
-    - RDDs automatically rebuilt on amchoen failure 
-2. Spark Tools 
-    - Spark SQL, Spark Streaming, MLib (Machine Learning), Graph graph <= Apache Spark
-    - graph database 
-3. Spark and Map Reduce Differences
-    - hadoop map redeuce, Spark 
-    - Storage: disk only, in-memory or on disk
-    - operations: Map and Reduce, Map, Reduce, Join, Sample, etc...
-    - Execution model: Batch, Batch interactive, streaming
-    - Programmine enviroment: Java, Scala, Java, R, and Python
- 4. History 
-    - 2002 MapReduce @Google ...
-. What's the point?
-    - It's all about the right level of abstraction.
-### 4. How it works?
- 1. architecture 
-    - A Spark program is two programs: a driver program and a workers program 
-    - Wroker programs run on cluster nodes or in local threads 
-    - RDDs are distributed across workers 
-    - Driver -> Cluster Manager -> Workers 
- 2. RDDs 
-    - The primary abstraction in Spark 
-          - Immutable once constructed 
-          - Track lineage information to efficiently recompute lost data 
-          - enable operations on collections of elements in parallel 
-    - Construct RDDs 
-          - by paralllelizing existing Python collections 
-          - By transferring existing RDDs 
-          - from files in HDFS ot any other storage system
-3. Some Transformations 
-    - map(func)
-    - filter(func)
-    - distinct(numTasks)
-    - flatMap(func)
-4. Small annoymous functions: use lambda functions 
-    - example 
-        - rdd = sc.parallelize([1,2,3,4])
-        - rdd.map(lambda x: x *2)
-        - rdd.filter(lambda x: x % 2 == 0)
-        - rdd = sc.parallelize([1,2,3,4, 4])
-        - rdd.distinct() ==> [1,2,3,4]
-        - rdd.take()
-        - rdd.collect()
-        - comments = lines.filter(iScomment)
-        - lines.count(),comments.count()
-        - lines.cache()
- 5. Spark Program lifesycycle 
-    - create RDDs from externel data or parallelize'a collection in your driver program 
-    - Lazily transforms them into new RDDs 
-    - cache)() some RDDs for reuse 
-    - Perform actions to execute parallel computation and produce results 
- 6. Spark Key-value RDDs 
-    - similar to Map Reduce, Spark supports key-value pairs 
-    - Each element of a pair RDD is pair tuple 
-     - rdd.reduceByKey()
-     - rdd.sortKey()
-     - rdd.groupByKey()
- 
- 
- 
+### 2. HDFS Architecture 
+1. When an input file is added to HDFS 
+    - file is split into smaller blocks of fixed size 
+    - each block is replicated 
+    - each replicated block is store on different host 
+2. Block size is configureable. Default is 128/256MB 
+3. Replication lebel is configurable, default is 3. 
+    - replication is necessary for scaling and high avaliablity 
+4. In case a host crashes or is removed 
+    - all blocks on that host are automatically replicated to other hosts 
+5. In case a host is added 
+    - Blocks will be relanced so that some blocks from other hosts will be placed on the new host. 
+6. master node(namenode daemon) -> data daemon
+### MapReduce MR 
+1. MR Framework Components 
+    - JOB tracker 
+            - centeral component responsible for managing job lifecycles 
+            - One Job tracker per MR framework instance 
+            - Accepts job submissions, queries 
+            - Enqueues jobs and schedules individual tasks 
+            - Communicates with task trackers to deploy and run tasks 
+            - Attempts to assign tasks to support Data lcoality 
+       
+    - Task tracker  
+            - one task tracker per host 
+            - runs and manages individual tasks 
+            - communicates progress of task tracker to job tracker 
+2. Everything esle 
+    - handles scheduling 
+    - handles data distrution 
+    - handles synchronization 
+    - handles errors and faults 
+    -
